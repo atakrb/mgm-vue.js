@@ -41,7 +41,7 @@
           </v-col>
 
           <!-- Sağdaki Iconlu Linkler -->
-          <v-col cols="12" sm="" class="d-flex align-center justify-space-around flex-wrap ">
+          <v-col lg="8" sm="8" md="8" class="d-flex align-center justify-space-around flex-wrap ">
             <div
                 v-for="(item, index) in icons"
                 :key="index"
@@ -117,6 +117,7 @@
           <!-- GÜNLÜK KARTLAR -->
           <v-row class="mt-0 d-flex align-center justify-space-around flex-wrap">
             <v-col
+                lg="" sm="12" md="12"
                 elevation="0"
                 outlined
                 dense
@@ -211,19 +212,19 @@
 
 
           <v-row>
-            <v-col cols="6" sm="12" class="pt-sm-0 mt-sm-0 pb-sm-0 mb-sm-16 ata">
+            <v-col cols="6" sm="6" md="6" class="pt-sm-0 mt-sm-0 pb-sm-0 mb-sm-16 ata">
               <a href="#" ><img src="/images/trharita/yesil-tr-map.jpg" alt=""></a>
             </v-col>
-          </v-row>
 
-          <v-row>
-            <v-col cols="12">
+
+
+            <v-col lg="12" sm="6" md="6" >
               <v-card elevation="0" outlined class="mb-1 d-flex align-center pa-2">
                 <v-icon color="orange darken-2" class="mr-2">mdi-alert</v-icon>
                 <span>Deprem Bölgesi Hava Tahmini</span>
               </v-card>
 
-              <v-card elevation="0" outlined class="mb-1 d-flex align-center pa-2">
+              <v-card lg="12" sm="6" md="6" elevation="0" outlined class="mb-1 d-flex align-center pa-2">
                 <v-icon color="orange darken-2" class="mr-2">mdi-alert</v-icon>
                 <span>Kuvvetli Meteorolojik Hadiseler için Alınacak Tedbirler</span>
               </v-card>
@@ -288,8 +289,8 @@ export default {
 
       ],
       people: [
-        { name: 'Murat KURUM',           image: '/images/yk/muratkurum.jpg',        title: 'Çevre ve Şehircilik Bakanı' },
-        { name: 'Volkan Mutlu COŞKUN',   image: '/images/yk/volkanmutlucoskun.jpg', title: 'Meteoroloji Genel Müdürü' }
+        { name: 'Murat Kurum',           image: '/images/yk/muratkurum.jpg',        title: 'Çevre ve Şehircilik Bakanı' },
+        { name: 'Volkan Coşkun',   image: '/images/yk/volkanmutlucoskun.jpg', title: 'Meteoroloji Genel Müdürü' }
       ],
       days: [
 
