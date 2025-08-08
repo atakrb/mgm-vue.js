@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue-vuetify
 
 ## Project setup
@@ -22,3 +23,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# mgm-vue.js
+>>>>>>> b908a3e91d56d593a1abbd614d3f1265206a9ed5
