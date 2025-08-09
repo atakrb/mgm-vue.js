@@ -17,22 +17,29 @@
       </v-row>
     </v-container>
 
-    <!-- ICONLAR VE KARTLAR -->
+    <!-- BEYAZ ŞERİT 2 LOGO VE MENU -->
     <section style="background-color: white; ">
       <v-container class="pa-0">
         <v-row dense>
-          <!-- Sol Kartlar -->
-          <v-col cols="4" >
-            <v-row>
-              <v-col cols="5">
+          <!-- Sol: Logolar -->
+          <v-col cols="12" md="4" sm="12">
+            <v-row align="center" justify="center">
+              <!-- 1. logo -->
+              <v-col cols="12" sm="12" md="6" class="text-center">
                 <v-card-text>
                   <img src="/images/csblogo-final.svg" alt="" style="width:120px">
                 </v-card-text>
               </v-col>
 
-              <v-divider vertical class="my-auto" style="height:60px; background-color:black; opacity:.2;"></v-divider>
+              <!-- Divider -->
+              <v-divider
+                  vertical
+                  class="my-auto d-none d-md-block"
+                  style="height:60px; background-color:black; opacity:.2;"
+              ></v-divider>
 
-              <v-col cols="6">
+              <!-- 2. logo -->
+              <v-col cols="12" sm="12" md="6" class="text-center">
                 <v-card-text>
                   <img src="/images/mgmlogo-final.svg" alt="" style="width:120px">
                 </v-card-text>
@@ -40,8 +47,11 @@
             </v-row>
           </v-col>
 
+
+
+
           <!-- Sağdaki Iconlu Linkler -->
-          <v-col lg="8" sm="8" md="8" class="d-flex align-center justify-space-around flex-wrap ">
+          <v-col cols="12" md="8" sm="12" class="d-flex align-center justify-space-around flex-wrap ">
             <div
                 v-for="(item, index) in icons"
                 :key="index"
@@ -59,11 +69,11 @@
       </v-container>
     </section>
 
-    <!-- ARAMA & HAVA DURUMU -->
+    <!-- ARAMA ÇUBUĞU HAVADURUMU VE KARTLAR -->
     <v-container>
       <v-row>
-        <!-- Sol: arama ve hava bilgisi -->
-        <v-col cols="12" md="9" >
+        <!-- ARAMA ÇUBUĞU -->
+        <v-col cols="12" md="9" sm="12" >
           <v-row>
             <v-col cols="12">
               <v-text-field
@@ -81,8 +91,12 @@
             </v-col>
           </v-row>
 
+          <!-- BEYAZ KUTU İÇİ GRAFİK VE KARTLAR -->
+
           <v-row>
-            <v-col cols="12" >
+            <v-col cols="12" sm="12" >
+
+              <!-- TARİH-SAAT-ANKARA -->
               <v-card color: elevation="0" outlined style="border-radius:12px;">
                 <v-col cols="12">
 
@@ -102,9 +116,12 @@
                     </v-col>
                   </v-row>
                 </v-col>
+
+                <!-- GRAFİK -->
                 <v-col cols="12">
                   <WeatherChart />
                 </v-col>
+
               </v-card>
             </v-col>
 
@@ -115,16 +132,14 @@
 
 
           <!-- GÜNLÜK KARTLAR -->
-          <v-row class="mt-0 d-flex align-center justify-space-around flex-wrap">
+          <v-row class="mt-0 d-flex justify-space-around" dense>
             <v-col
-                lg="" sm="12" md="12"
-                elevation="0"
-                outlined
-                dense
-                class="mx-auto mb-2"
                 v-for="(d, i) in days"
                 :key="i"
+                cols="12" sm="12" md="12" lg=""
+                class="mb-2"
             >
+
               <v-card class="day-card" elevation="0">
                 <!-- Başlık -->
                 <div class="day-header text-center py-2">
@@ -158,7 +173,7 @@
         </v-col>
 
         <!-- Sağ: yetkililer + toggle + uyarılar -->
-        <v-col  lg="3" sm="12" md="6">
+        <v-col  lg="3" sm="12" md="12">
           <v-row v-for="person in people" :key="person.name">
             <v-col class="ata" cols="12">
               <v-card outlined>
@@ -210,15 +225,18 @@
               </v-col>
             </v-row>
 
+          <!-- TR HARİTA -->
 
           <v-row>
-            <v-col cols="6" sm="6" md="6" class="pt-sm-0 mt-sm-0 pb-sm-0 mb-sm-16 ata">
-              <a href="#" ><img src="/images/trharita/yesil-tr-map.jpg" alt=""></a>
+            <v-col cols="12" sm="12" md="12" lg="12" class="pt-sm-0 mt-sm-0 pb-sm-0 mb-sm-4 text-center">
+              <a href="#" ><img src="/images/trharita/yesil-tr-map.jpg" style="max-width:100%; height:auto" alt="">
+              </a>
             </v-col>
 
 
+            <!-- UYARI KARTLARI -->
 
-            <v-col lg="12" sm="6" md="6" >
+            <v-col cols="12" sm="12" md="12" lg="12">
               <v-card elevation="0" outlined class="mb-1 d-flex align-center pa-2">
                 <v-icon color="orange darken-2" class="mr-2">mdi-alert</v-icon>
                 <span>Deprem Bölgesi Hava Tahmini</span>
@@ -302,6 +320,7 @@ export default {
       ]
     };
   },
+ // TARİH-SAAT
   computed: {
     formattedDate() {
       return this.now.toLocaleDateString('tr-TR', { month: 'long', day: 'numeric' });
@@ -358,7 +377,7 @@ export default {
   background:#fff;
 }
 
-/* Görseldeki renklere yakın tonlar */
+/* derece style */
 .min-temp{
   color:#12b7d6;        /* turkuaz */
   font-weight:600;
